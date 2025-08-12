@@ -1,0 +1,25 @@
+{
+  "name": "Python 3.9.18 Conda GUI Dev",
+  "dockerFile": "Dockerfile",
+  "remoteUser": "vscode",
+  "runArgs": [
+    "-e", "DISPLAY=:0",
+    "-v", "/tmp/.X11-unix:/tmp/.X11-unix"
+  ],
+  "containerEnv": {
+    "DISPLAY": ":0"
+  },
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "extensions": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-toolsai.jupyter"
+  ],
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+  ],
+  "workspaceFolder": "/workspace",
+//   "postCreateCommand": "conda env update -f /workspace/.devcontainer/environment.yml && conda init bash"
+}
