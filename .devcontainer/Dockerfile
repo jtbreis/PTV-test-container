@@ -11,6 +11,3 @@ RUN apt-get update && apt-get install -y \
     x11-apps \
  && rm -rf /var/lib/apt/lists/*
 
-# Clear any scripts or profiles that reset DISPLAY (optional)
-RUN sed -i '/DISPLAY=/d' /etc/profile /etc/bash.bashrc || true
-
