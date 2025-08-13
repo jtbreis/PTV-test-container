@@ -1,24 +1,24 @@
 {
-  "name": "Python 3.9.18 Conda GUI Dev",
-  "dockerFile": "Dockerfile",
-  "remoteUser": "vscode",
-  "runArgs": [
-    "-e", "DISPLAY=${env:DISPLAY}",
-    "-e", "XAUTHORITY=/home/vscode/.Xauthority",
-    "--network=host"
-  ],
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
-  },
-  "extensions": [
-    "ms-python.python",
-    "ms-python.vscode-pylance",
-    "ms-toolsai.jupyter"
-  ],
-  "mounts": [
-    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
-    "source=${env:HOME}/.Xauthority,target=/home/vscode/.Xauthority,type=bind"
-  ],
-  "workspaceFolder": "/workspace",
-//   "postCreateCommand": "conda env update -f /workspace/.devcontainer/environment.yml && conda init bash"
+    "name": "Ubuntu Dev Container",
+    "build": {
+        "dockerfile": "Dockerfile"
+    }, 
+    "user": "vscode",
+    "runArgs": [
+        "-e", "DISPLAY=${env:DISPLAY}",
+        "-e", "XAUTHORITY=/home/vscode/.Xauthority",
+        "--network=host"
+    ],
+    "features": {},
+    "settings": {},
+    "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter"
+    ],
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+        "source=${env:HOME}/.Xauthority,target=/home/vscode/.Xauthority,type=bind"
+    ],
+    "workspaceFolder": "/workspace",
 }
